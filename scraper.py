@@ -50,7 +50,7 @@ def get_data():
 		"total_deaths": (search["TotalDeaths"].values[0]),
 		"total_recovered": (search["TotalRecovered"].values[0]),
 		"active_cases": (search["ActiveCases"]).values[0],
-		"new_cases": search["NewCases"],
-		"new_deaths": search["NewDeaths"]
+		"new_cases": search["NewCases"].values[0],
+		"new_deaths": search["NewDeaths"].values[0]
 	}
 
