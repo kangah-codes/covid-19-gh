@@ -49,5 +49,8 @@ def get_data():
 		"total_cases":int(search["TotalCases"]),
 		"total_deaths": (search["TotalDeaths"].values[0]),
 		"total_recovered": (search["TotalRecovered"].values[0]),
-		"active_cases": (search["ActiveCases"]).values[0]
+		"active_cases": (search["ActiveCases"]).values[0],
+		"new_cases": search["NewCases"],
+		"new_deaths": search["NewDeaths"]
 	}
+
