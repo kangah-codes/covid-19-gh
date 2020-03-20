@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, abort
 from scraper import get_data
 from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup as soup
+import datetime
 
 app = Flask(__name__)
 
@@ -18,6 +19,8 @@ def index():
 	# 	pass
 	# except:
 	# 	abort(500)
+	now = datetime.datetime.now()
+	data['now'] = now
 	return render_template('index.html', **data)
 
 @app.errorhandler(500)
