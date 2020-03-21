@@ -84,7 +84,7 @@ var simplemaps_countrymap_mapdata={
     GHA2158: {
       name: "Ashanti",
       hover_color: "red",
-      description: "3 cases",
+      description: "4 cases",
       color: "red"
     },
     GHA2159: {
@@ -102,7 +102,7 @@ var simplemaps_countrymap_mapdata={
     GHA2172: {
       name: "Greater Accra",
       hover_color: "red",
-      description: "13 cases",
+      description: "15 cases",
       color: "red"
     },
     GHA2173: {
