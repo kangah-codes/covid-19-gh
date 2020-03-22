@@ -65,20 +65,39 @@
 				nCOVID-19 Case Tracking in Ghana
 			</h1>
 			<center>
-			<h3 >
-				Total Confirmed Cases: {{ total_cases }}<br><sub>As at {{ now }}</sub>
-			</h3>
-			<h3 style="color: red">
-				Active Infections: {{ active_cases }}<br>
-			</h3>
-			<h3 style="color: red">
-				Total Deaths: {{ total_deaths }}<br>
-			</h3>
-			<h3 style="color: green">
-				Total Recovered: {{ total_recovered }}<br>
-			</h3>
-			<h3>Cases today: +{{ new_cases }}</h3>
-			<h3>Deaths today: {{ new_deaths }}</h3>
+				{% if bool %}
+					<h3 >
+						Total Confirmed Cases: {{ new[1] }}<br><sub>As at {{ new[4] }}</sub>
+					</h3>
+					<h3 style="color: red">
+						Active Infections: {{ new[0] }}<br>
+					</h3>
+					<h3 style="color: red">
+						Total Deaths: {{ new[3] }}<br>
+					</h3>
+					<h3 style="color: green">
+						Total Recovered: {{ new[2] }}<br>
+					</h3>
+					<h3>Cases today: {{ new_cases }}</h3>
+					<h3>Deaths today: {{ new_deaths }}</h3>
+				{% else %}
+					<h3 >
+						Total Confirmed Cases: {{ total_cases }}<br><sub>As at {{ now }}</sub>
+					</h3>
+					<h3 style="color: red">
+						Active Infections: {{ active_cases }}<br>
+					</h3>
+					<h3 style="color: red">
+						Total Deaths: {{ total_deaths }}<br>
+					</h3>
+					<h3 style="color: green">
+						Total Recovered: {{ total_recovered }}<br>
+					</h3>
+					<h3>Cases today: {{ new_cases }}</h3>
+					<h3>Deaths today: {{ new_deaths }}</h3>
+				{% endif %}
+				<h3>Total Tested: 315</h3>
+				<h3>Total Contacts: 575</h3>
 		</center>
 		</div>
 				</div>
@@ -150,7 +169,7 @@
 <div class="tm-spacer" id="tm-spacer-5e72a7fea747a"></div>
 <div class="tm-js-chart tm-line-chart" id="tm-line-chart-5e72a7fea751d">
 
-	<div class="chart-data" style="display:none;">{"type":"line","data":{"labels":["11/03/20",  "12/03/20", "13/12/03/20", "14/03/20", "15/02/20", "16/03/20", "17/03/20", "18/03/20","19/03/20", "20/03/20", "21/03/20", "22/03/20"],"datasets":[{"label":"Confirmed","fill":false,"backgroundColor":"rgba(105,59,255,0.55)","borderColor":"rgba(105,59,255,0.55)","borderCapStyle":"butt","borderDash":[],"borderDashOffset":0,"borderJoinStyle":"miter","spanGaps":false,"showLine":true,"steppedLine":false,"pointStyle":"circle","pointBorderWidth":1,"pointHoverRadius":5,"pointHoverBorderWidth":1,"hidden":false,"lineTension":0.33299999999999996,"data":["0", "2","2","2", "6","6", "7","7", "11", "16", "21", "21"],"borderWidth":2,"pointRadius":4,"pointHitRadius":3}]},"options":{"animation":{"duration":2000},"maintainAspectRatio":true,"tooltips":{"enabled":true,"mode":"index","intersect":false,"bodySpacing":8,"titleSpacing":6,"cornerRadius":8,"xPadding":10},"legend":{"display":true,"position":"bottom","labels":{"usePointStyle":false,"padding":20,"boxWidth":16}},"scales":{"yAxes":[{"ticks":{"fontColor":"222","beginAtZero":true},"gridLines":{"color":"rgba(43, 43, 43, 0.2)","zeroLineColor":"rgba(43, 43, 43, 0.6)"}}]}}}</div>
+	<div class="chart-data" style="display:none;">{"type":"line","data":{"labels":["11/03/20",  "12/03/20", "13/12/03/20", "14/03/20", "15/02/20", "16/03/20", "17/03/20", "18/03/20","19/03/20", "20/03/20", "21/03/20", "22/03/20"],"datasets":[{"label":"Confirmed","fill":false,"backgroundColor":"rgba(105,59,255,0.55)","borderColor":"rgba(105,59,255,0.55)","borderCapStyle":"butt","borderDash":[],"borderDashOffset":0,"borderJoinStyle":"miter","spanGaps":false,"showLine":true,"steppedLine":false,"pointStyle":"circle","pointBorderWidth":1,"pointHoverRadius":5,"pointHoverBorderWidth":1,"hidden":false,"lineTension":0.33299999999999996,"data":["0", "2","2","2", "6","6", "7","7", "11", "16", "21", "24"],"borderWidth":2,"pointRadius":4,"pointHitRadius":3}]},"options":{"animation":{"duration":2000},"maintainAspectRatio":true,"tooltips":{"enabled":true,"mode":"index","intersect":false,"bodySpacing":8,"titleSpacing":6,"cornerRadius":8,"xPadding":10},"legend":{"display":true,"position":"bottom","labels":{"usePointStyle":false,"padding":20,"boxWidth":16}},"scales":{"yAxes":[{"ticks":{"fontColor":"222","beginAtZero":true},"gridLines":{"color":"rgba(43, 43, 43, 0.2)","zeroLineColor":"rgba(43, 43, 43, 0.6)"}}]}}}</div>
 	<canvas width="500" height="375"></canvas>
 
 </div>
@@ -180,7 +199,21 @@
 <div class="tm-spacer" id="tm-spacer-5e72a7fea7a58"></div>
 <div class="tm-js-chart tm-line-chart" id="tm-line-chart-5e72a7fea7ac6">
 
-	<div class="chart-data" style="display:none;">{"type":"line","data":{"labels":["12/03/20", "13/03/20", "14/03/20", "15/03/20", "16/03/20", "15/03/20", "17/03/20", "18/03/20","19/03/20","20/03/20", "21/03/20", "22/03/20"],"datasets":[{"label":"Recoveries","fill":false,"backgroundColor":"#228B22","borderColor":"#228B22","borderCapStyle":"butt","borderDash":[],"borderDashOffset":0,"borderJoinStyle":"miter","spanGaps":false,"showLine":true,"steppedLine":false,"pointStyle":"circle","pointBorderWidth":1,"pointHoverRadius":6,"pointHoverBorderWidth":1,"hidden":false,"lineTension":0,"data":["0","0","0","0","0","0","0","0","0","0","0"],"borderWidth":3,"pointRadius":5,"pointHitRadius":3}]},"options":{"animation":{"duration":2000},"maintainAspectRatio":true,"tooltips":{"enabled":true,"mode":"index","intersect":false,"bodySpacing":8,"titleSpacing":6,"cornerRadius":8,"xPadding":10},"legend":{"display":true,"position":"bottom","labels":{"usePointStyle":false,"padding":20,"boxWidth":16}},"scales":{"yAxes":[{"ticks":{"fontColor":"222","beginAtZero":true},"gridLines":{"color":"rgba(43, 43, 43, 0.2)","zeroLineColor":"rgba(43, 43, 43, 0.6)"}}]}}}</div>
+	<div class="chart-data" style="display:none;">{"type":"line","data":{"labels":["12/03/20", "13/03/20", "14/03/20", "15/03/20", "16/03/20", "15/03/20", "17/03/20", "18/03/20","19/03/20","20/03/20", "21/03/20", "22/03/20"],"datasets":[{"label":"Recoveries","fill":false,"backgroundColor":"#228B22","borderColor":"#228B22","borderCapStyle":"butt","borderDash":[],"borderDashOffset":0,"borderJoinStyle":"miter","spanGaps":false,"showLine":true,"steppedLine":false,"pointStyle":"circle","pointBorderWidth":1,"pointHoverRadius":6,"pointHoverBorderWidth":1,"hidden":false,"lineTension":0,"data":["0","0","0","0","0","0","0","0","0","0","0","0"],"borderWidth":3,"pointRadius":5,"pointHitRadius":3}]},"options":{"animation":{"duration":2000},"maintainAspectRatio":true,"tooltips":{"enabled":true,"mode":"index","intersect":false,"bodySpacing":8,"titleSpacing":6,"cornerRadius":8,"xPadding":10},"legend":{"display":true,"position":"bottom","labels":{"usePointStyle":false,"padding":20,"boxWidth":16}},"scales":{"yAxes":[{"ticks":{"fontColor":"222","beginAtZero":true},"gridLines":{"color":"rgba(43, 43, 43, 0.2)","zeroLineColor":"rgba(43, 43, 43, 0.6)"}}]}}}</div>
+	<canvas width="500" height="375"></canvas>
+
+</div>
+<div class="tm-spacer" id="tm-spacer-5e72a7fea7b37"></div>
+</div></div></div>
+
+
+<div id="tm-column-5e72a7fea7666" class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner "><div class="wpb_wrapper">
+<div class="tm-heading  left tm-animation move-up" id="tm-heading-5e72a7fea789e">
+	<h3 class="heading" style="">Combined</h3></div>
+
+<div class="tm-spacer" id="tm-spacer-5e72a7fea7a58"></div>
+<div class="tm-js-chart tm-line-chart" id="tm-line-chart-5e72a7fea7ac6">
+<div class="chart-data" style="display:none;">{"type":"line","data":{"labels":["12/03/20", "13/03/20", "14/03/20", "15/03/20", "16/03/20", "15/03/20", "17/03/20", "18/03/20","19/03/20","20/03/20", "21/03/20", "22/03/20"],"datasets":[{"label":"Confirmed","fill":false,"backgroundColor":"rgba(105,59,255,0.55)","borderColor":"rgba(105,59,255,0.55)","borderCapStyle":"butt","borderDash":[],"borderDashOffset":0,"borderJoinStyle":"miter","spanGaps":false,"showLine":true,"steppedLine":false,"pointStyle":"circle","pointBorderWidth":1,"pointHoverRadius":5,"pointHoverBorderWidth":1,"hidden":false,"lineTension":0.33299999999999996,"data":["0", "2","2","2", "6","6", "7","7", "11", "16", "21", "24"],"borderWidth":2,"pointRadius":4,"pointHitRadius":3},{"label":"Deaths","fill":false,"backgroundColor":"rgba(250,0,0,0.56)","borderColor":"rgba(250,0,0,0.56)","borderCapStyle":"butt","borderDash":[],"borderDashOffset":0,"borderJoinStyle":"miter","spanGaps":false,"showLine":true,"steppedLine":false,"pointStyle":"circle","pointBorderWidth":1,"pointHoverRadius":5,"pointHoverBorderWidth":1,"hidden":false,"lineTension":0.33299999999999996,"data":["0", "0","0","0", "0","0", "0","0", "0", "0", "1", "1"],"borderWidth":2,"pointRadius":4,"pointHitRadius":3}, {"label":"Recovered","fill":false,"backgroundColor":"rgba(0,250,3,0.56)","borderColor":"rgba(0,250,3,0.56)","borderCapStyle":"butt","borderDash":[],"borderDashOffset":0,"borderJoinStyle":"miter","spanGaps":false,"showLine":true,"steppedLine":false,"pointStyle":"circle","pointBorderWidth":1,"pointHoverRadius":5,"pointHoverBorderWidth":1,"hidden":false,"lineTension":0.33299999999999996,"data":["0", "0","0","0", "0","0", "0","0", "0", "0", "0", "0"],"borderWidth":2,"pointRadius":4,"pointHitRadius":3}]},"options":{"animation":{"duration":2000},"maintainAspectRatio":true,"tooltips":{"enabled":true,"mode":"index","intersect":false,"bodySpacing":8,"titleSpacing":6,"cornerRadius":8,"xPadding":10},"legend":{"display":true,"position":"bottom","labels":{"usePointStyle":false,"padding":20,"boxWidth":16}},"scales":{"yAxes":[{"ticks":{"fontColor":"222","beginAtZero":true},"gridLines":{"color":"rgba(43, 43, 43, 0.2)","zeroLineColor":"rgba(43, 43, 43, 0.6)"}}]}}}</div>
 	<canvas width="500" height="375"></canvas>
 
 </div>
