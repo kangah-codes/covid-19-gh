@@ -8,13 +8,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+	data = {}
 	try:
 		url = "https://ghanahealthservice.org/covid19/"
 		req = Request(url, headers={'User-Agent':'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17'})
 		webpage = urlopen(req).read()
 		page_soup = soup(webpage, 'html.parser')
 		item = page_soup.findAll('p', {'class':'information-line-text'})
-		data = {}
 		dat = get_data()
 		data['new_cases'] = dat['new_cases']
 		data['new_deaths'] = dat['new_deaths']
