@@ -47,7 +47,7 @@ def get_data():
 	search = df[df["Country,Other"].str.match("Ghana")].head(1)
 
 	return {
-		"total_cases": (search["TotalCases"]),
+		"total_cases": int(search["TotalCases"]),
 		"total_deaths": (search["TotalDeaths"].values[0]),
 		"total_recovered": (search["TotalRecovered"].values[0]),
 		"active_cases": (search["ActiveCases"]).values[0],
