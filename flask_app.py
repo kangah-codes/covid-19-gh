@@ -28,9 +28,8 @@ def index():
 	# 	data['now'] = now
 	# 	return render_template('index.html', **data)
 	# except Exception as e:
-	data['bool'] = False
-	print("errpr")
 	data = get_data()
+	data['bool'] = False
 	now = datetime.datetime.now()
 	data['now'] = now
 	return render_template('index.html', **data)
