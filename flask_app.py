@@ -4,9 +4,7 @@ from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup as soup
 import datetime
 # import HTMLSession from requests_html
-from requests_html import HTMLSession
 # create an HTML Session object
-session = HTMLSession()
 
 app = Flask(__name__)
 
