@@ -3,6 +3,10 @@ from scraper import get_data
 from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup as soup
 import datetime
+# import HTMLSession from requests_html
+from requests_html import HTMLSession
+# create an HTML Session object
+session = HTMLSession()
 
 app = Flask(__name__)
 
@@ -37,6 +41,8 @@ def index():
 @app.errorhandler(500)
 def handler(error):
 	return render_template('error.html')
+
+	
 
 if __name__ == "__main__":
 	app.run(debug=True)
