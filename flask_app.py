@@ -3,6 +3,8 @@ from scraper import get_data
 from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup as soup
 import datetime
+import covid19cases as covid
+
 # import HTMLSession from requests_html
 # create an HTML Session object
 
@@ -30,7 +32,9 @@ def index():
 	# 	data['now'] = now
 	# 	return render_template('index.html', **data)
 	# except Exception as e:
-	data = get_data()
+	#data = get_data()
+	print(covid.get_country_cases("Ghana"))
+	data = covid.get_country_cases("Ghana")
 	data['bool'] = False
 	now = datetime.datetime.now()
 	data['now'] = now

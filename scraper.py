@@ -1,6 +1,7 @@
 import requests
 import lxml.html as lh
 import pandas as pd
+import covid19cases as covid
 
 
 def get_data():
@@ -44,17 +45,17 @@ def get_data():
 	df = pd.DataFrame(Dict)
 
 
-	search = df[df["Country,Other"].str.match("Ghana")].head(1)
+	search = df[df["Country,Other"].astype(str).str.match("Ghana")].head(1)
 
 	return {
-		"total_cases": int(search["TotalCases"]),
-		"total_deaths": (search["TotalDeaths"].values[0]),
-		"total_recovered": (search["TotalRecovered"].values[0]),
-		"active_cases": (search["ActiveCases"]).values[0],
-		"new_cases": search["NewCases"].values[0],
-		"new_deaths": search["NewDeaths"].values[0]
+		"total_cases": (search["TotalCases"]),
+		"total_deaths": (search["TotalDeaths"]),
+		"total_recovered": (search["TotalRecovered"]),
+		"active_cases": (search["ActiveCases"]),
+		"new_cases": search["NewCases"],
+		"new_deaths": search["NewDeaths"].values
 	}
 
 	#return {}
 
-#get_data()
+print(get_data())
