@@ -73,7 +73,10 @@ var simplemaps_countrymap_mapdata={
   },
   state_specific: {
     GHA2155: {
-      name: "Northern"
+      name: "Northern",
+      hover_color: "red",
+      description: "11 cases",
+      color: "red"
     },
     GHA2156: {
       name: "Upper East"
