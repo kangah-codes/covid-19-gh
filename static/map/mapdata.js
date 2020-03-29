@@ -75,7 +75,7 @@ var simplemaps_countrymap_mapdata={
     GHA2155: {
       name: "Northern",
       hover_color: "red",
-      description: "11 cases",
+      description: "10 cases",
       color: "red"
     },
     GHA2156: {
@@ -90,7 +90,7 @@ var simplemaps_countrymap_mapdata={
     GHA2158: {
       name: "Ashanti",
       hover_color: "red",
-      description: "7 cases",
+      description: "8 cases",
       color: "red"
     },
     GHA2159: {
