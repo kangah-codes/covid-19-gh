@@ -107,7 +107,7 @@ var simplemaps_countrymap_mapdata={
     },
     GHA2172: {
       name: "Greater Accra",
-      hover_color: "red",
+      hover_color: "#722f37",
       description: "133 cases",
       color: "red"
     },
