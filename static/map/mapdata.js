@@ -79,7 +79,10 @@ var simplemaps_countrymap_mapdata={
       color: "red"
     },
     GHA2156: {
-      name: "Upper East"
+      name: "Upper East",
+      hover_color: "red",
+      description: "1 case",
+      color: "red"
     },
     GHA2157: {
       name: "Upper West",
