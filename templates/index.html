@@ -412,7 +412,7 @@ var $insight = {"templateUrl":"https:\/\/mitech.thememove.com\/wp-content\/theme
 			
 
 				 						<script type="text/javascript">
-											  function drawPosition(position){
+											  function drawPosition(){
 											  	var mymap = L.map('map').setView([5.6037, -0.1870], 13);
 
 												L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={token}', {
@@ -447,7 +447,7 @@ var $insight = {"templateUrl":"https:\/\/mitech.thememove.com\/wp-content\/theme
 
 												{% endfor %}
 
-											}
+
 
 											// Define source and target locations which are passed into the Targomo route service.
 
@@ -460,6 +460,10 @@ var $insight = {"templateUrl":"https:\/\/mitech.thememove.com\/wp-content\/theme
 											  maximumAge        : 1000,
 											  timeout           : 1000
 											}
+
+										}
+
+										drawPosition();
 				 						</script>
 
 <!-- Mirrored from mitech.thememove.com/elements/unlimited-charts/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Mar 20 23:13:07 GMT -->
