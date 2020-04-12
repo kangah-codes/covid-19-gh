@@ -57,5 +57,3 @@ def get_data():
 	}
 
 	#return {}
-
-print(get_data())
