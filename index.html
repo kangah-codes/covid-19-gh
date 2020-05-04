@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from quixlab.com/demo/covtrack/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 May 2020 01:27:22 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Covid-19-Track GH</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+
+        <div class="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="">
+                                <span>Covid-19-GH</span></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <span><i class="fas fa-tachometer-alt"></i></span>
+                                        <a class="nav-link" href="index.html"> Home </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <span><i class="fas fa-chart-area"></i></span>
+                                        <a class="nav-link" href="charts.html">Charts</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <span><i class="fas fa-globe-europe"></i></span>
+                                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                                            Continent
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="world.html">World</a>
+                                            <a class="dropdown-item" href="asia.html">Asia</a>
+                                            <a class="dropdown-item" href="europe.html">Europe</a>
+                                            <a class="dropdown-item" href="africa.html">Africa</a>
+                                            <a class="dropdown-item" href="australia.html">Australia</a>
+                                            <a class="dropdown-item" href="south-america.html">South America</a>
+                                            <a class="dropdown-item" href="north-america.html">North America</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mb-3 update-time">
+                            <h3>Worldwide</h3>
+                            <span class="stats-taken mr-2">Last Update: </span>
+                            <strong id="stat-taken" class="text-primary"></strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-5 col-lg-12">
+                        <div class="world-statistics">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col">
+                                    <div class="world-widget">
+                                        <div class="icon gradient-1">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Total Cases</h5>
+                                            <h2 id="total_cases"></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col">
+                                    <div class="world-widget">
+                                        <div class="icon gradient-9">
+                                            <i class="fas fa-procedures"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Total Death</h5>
+                                            <h2 id="total_deaths"></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col">
+                                    <div class="world-widget">
+                                        <div class="icon gradient-4">
+                                            <i class="fas fa-child"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Total Recovered</h5>
+                                            <h2 id="total_recovered"></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col">
+                                    <div class="world-widget">
+                                        <div class="icon gradient-3">
+                                            <i class="fas fa-bell"></i>
+                                        </div>
+                                        <div>
+                                            <h5>New Cases</h5>
+                                            <h2 id="new_cases"></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col">
+                                    <div class="world-widget">
+                                        <div class="icon gradient-12">
+                                            <i class="fas fa-bed"></i>
+                                        </div>
+                                        <div>
+                                            <h5>New Death</h5>
+                                            <h2 id="new_deaths"></h2>
+                                        </div>
+                                    </div>
+                                    <div class="world-widget">
+                                        <div class="icon gradient-5">
+                                            <i class="fas fa-medkit"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Helpline</h5>
+                                            <h2>999</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col">
+                                    <div class="world-chart mt-3">
+                                        <canvas id="coronaChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-12">
+                        <div class="world-map">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div id="vmap"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-md-6">
+                        <div class="copy_right">
+                            Covid-19-GH Template made by Quixlab
+                        </div>
+                    </div>
+                    <!-- <div class="col-xl-6 col-md-6 text-lg-right text-center">
+                        <div class="social">
+                            <a href="https://www.youtube.com/channel/UChN1goECpg64jlUxSzySiNg?view_as=subscriber"><i
+                                    class="fab fa-youtube"></i></a>
+                            <a href="https://twitter.com/quixlab"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/qxlab"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <!--removeIf(production)-->
+        <!--**********************************
+            Right sidebar start
+        ***********************************-->
+        <div class="sidebar-right">
+            <a class="sidebar-right-trigger" href="javascript:void(0)">
+                <span><i class="fa fa-cog fa-spin"></i></span>
+            </a>
+            <div class="sidebar-right-inner">
+                <div class="admin-settings">
+                    <div class="opt-header-color">
+                        <p>Theme</p>
+                        <div>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_1" class="filled-in chk-col-primary"
+                                    id="header_color_1">
+                                <label for="header_color_1"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_2" class="filled-in chk-col-primary"
+                                    id="header_color_2">
+                                <label for="header_color_2"></label>
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Direction</p>
+                        <select class="form-control" name="theme_direction" id="theme_direction">
+                            <option value="ltr">LTR</option>
+                            <option value="rtl">RTL</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Right sidebar end
+        ***********************************-->
+        <!--endRemoveIf(production)-->
+
+
+    </div>
+
+
+
+
+
+    <script src="vendors/jquery/jquery.min.js"></script>
+    <script src="vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+    <script src='vendors/fixed-header-table/jquery.fixedheadertable.min.html'></script>
+    <script src="js/plugins/fixedheadertable-init.js"></script>
+    <script src='vendors/chartjs/Chart.bundle.min.js'></script>
+
+
+    <script src="vendors/vectormap/jquery.vmap.min.js"></script>
+    <script src="vendors/vectormap/jquery.vmap.world.js"></script>
+
+    <script src="js/world/vectormap-world.js"></script>
+
+    <script src="vendors/datatable/jquery.dataTables.min.js"></script>
+    <script src="js/world/datatable.js"></script>
+
+    <script src="js/world/dashboard.js"></script>
+    <script src="js/world/chart.js"></script>
+    <script src="js/scripts.js"></script>
+    
+    <script src="js/settings.js"></script>
+    <script src="js/quixnav-init.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+</body>
+
+
+<!-- Mirrored from quixlab.com/demo/covtrack/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 May 2020 01:27:52 GMT -->
+</html>

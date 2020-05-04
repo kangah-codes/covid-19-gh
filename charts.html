@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from quixlab.com/demo/covtrack/charts.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 May 2020 01:28:05 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Covid-19-GH </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+
+        <div class="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="">
+                                <span>Covid-19-GH</span></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <span><i class="fas fa-tachometer-alt"></i></span>
+                                        <a class="nav-link" href="index.html"> Dashboard </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <span><i class="fas fa-chart-area"></i></span>
+                                        <a class="nav-link" href="charts.html">Charts</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <span><i class="fas fa-globe-europe"></i></span>
+                                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                                            Continent
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="world.html">World</a>
+                                            <a class="dropdown-item" href="asia.html">Asia</a>
+                                            <a class="dropdown-item" href="europe.html">Europe</a>
+                                            <a class="dropdown-item" href="africa.html">Africa</a>
+                                            <a class="dropdown-item" href="australia.html">Australia</a>
+                                            <a class="dropdown-item" href="south-america.html">South America</a>
+                                            <a class="dropdown-item" href="north-america.html">North America</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Ghana</h4>
+                                <span>Last 30 Days</span>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="ghana_timeseries"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-md-6">
+                        <div class="copy_right">
+                            Covid-19-GH Template by Quixlab.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--removeIf(production)-->
+        <!--**********************************
+            Right sidebar start
+        ***********************************-->
+        <div class="sidebar-right">
+            <a class="sidebar-right-trigger" href="javascript:void(0)">
+                <span><i class="fa fa-cog fa-spin"></i></span>
+            </a>
+            <div class="sidebar-right-inner">
+                <div class="admin-settings">
+                    <div class="opt-header-color">
+                        <p>Background Color</p>
+                        <div>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_1" class="filled-in chk-col-primary"
+                                    id="header_color_1">
+                                <label for="header_color_1"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_2" class="filled-in chk-col-primary"
+                                    id="header_color_2">
+                                <label for="header_color_2"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_3" class="filled-in chk-col-primary"
+                                    id="header_color_3">
+                                <label for="header_color_3"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_4" class="filled-in chk-col-primary"
+                                    id="header_color_4">
+                                <label for="header_color_4"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_5" class="filled-in chk-col-primary"
+                                    id="header_color_5">
+                                <label for="header_color_5"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_6" class="filled-in chk-col-primary"
+                                    id="header_color_6">
+                                <label for="header_color_6"></label>
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Direction</p>
+                        <select class="form-control" name="theme_direction" id="theme_direction">
+                            <option value="ltr">LTR</option>
+                            <option value="rtl">RTL</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Right sidebar end
+        ***********************************-->
+        <!--endRemoveIf(production)-->
+        
+    </div>
+
+
+
+
+
+
+    <script src="vendors/jquery/jquery.min.js"></script>
+    <script src="vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src='vendors/chartjs/Chart.bundle.min.js'></script>
+    <script src="js/america/usa.js"></script>
+    <script src="js/europe/spain.js"></script>
+    <script src="js/europe/italy.js"></script>
+    <script src="js/asia/china.js"></script>
+    <script src="js/europe/france.js"></script>
+    <script src="js/europe/germany.js"></script>
+    <script src="js/scripts.js"></script>
+    
+    <script src="js/settings.js"></script>
+    <script src="js/quixnav-init.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+</body>
+
+
+<!-- Mirrored from quixlab.com/demo/covtrack/charts.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 May 2020 01:28:09 GMT -->
+</html>

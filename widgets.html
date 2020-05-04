@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Covid-19-Track GH</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+
+        <div class="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="">
+                                <span>Covid-19-GH</span></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <span><i class="fas fa-tachometer-alt"></i></span>
+                                        <a class="nav-link" href="index.html"> Home </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <span><i class="fas fa-chart-area"></i></span>
+                                        <a class="nav-link" href="charts.html">Charts</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <span><i class="fas fa-globe-europe"></i></span>
+                                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                                            Continent
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="world.html">World</a>
+                                            <a class="dropdown-item" href="asia.html">Asia</a>
+                                            <a class="dropdown-item" href="europe.html">Europe</a>
+                                            <a class="dropdown-item" href="africa.html">Africa</a>
+                                            <a class="dropdown-item" href="australia.html">Australia</a>
+                                            <a class="dropdown-item" href="south-america.html">South America</a>
+                                            <a class="dropdown-item" href="north-america.html">North America</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title"><span id="usa_flag" class="mr-2"></span> USA</h4>
+                            </div>
+                            <div class="card-body widget">
+                                <div class="row">
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Cases</span>
+                                        <h4 id="usa_cases"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Death</span>
+                                        <h4 id="usa_deaths"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Recovered</span>
+                                        <h4 id="usa_total_recovered"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Today Death</span>
+                                        <h4 id="usa_new_deaths"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Today Cases</span>
+                                        <h4 id="usa_new_cases"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Critical</span>
+                                        <h4 id="usa_serious_critical"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Active Cases</span>
+                                        <h4 id="usa_active_cases"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title"><span id="spain_flag" class="mr-2"></span> Spain</h4>
+                            </div>
+                            <div class="card-body widget">
+                                <div class="row">
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Cases</span>
+                                        <h4 id="spain_cases"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Death</span>
+                                        <h4 id="spain_deaths"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Recovered</span>
+                                        <h4 id="spain_total_recovered"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Today Death</span>
+                                        <h4 id="spain_new_deaths"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Today Cases</span>
+                                        <h4 id="spain_new_cases"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Critical</span>
+                                        <h4 id="spain_serious_critical"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Active Cases</span>
+                                        <h4 id="spain_active_cases"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center text-center">
+                    <div class="col">
+                        <div class="google-ads-leaderboard">
+                            <img src="images/ads/ads1.jpg" alt="" class="img-fluid">
+                            <p>Ads here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title"><span id="italy_flag" class="mr-2"></span> Italy</h4>
+                            </div>
+                            <div class="card-body widget">
+                                <div class="row">
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Cases</span>
+                                        <h4 id="italy_cases"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Death</span>
+                                        <h4 id="italy_deaths"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Recovered</span>
+                                        <h4 id="italy_total_recovered"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Today Death</span>
+                                        <h4 id="italy_new_deaths"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Today Cases</span>
+                                        <h4 id="italy_new_cases"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Critical</span>
+                                        <h4 id="italy_serious_critical"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Active Cases</span>
+                                        <h4 id="italy_active_cases"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title"><span id="germany_flag" class="mr-2"></span> Germany</h4>
+                            </div>
+                            <div class="card-body widget">
+                                <div class="row">
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Cases</span>
+                                        <h4 id="germany_cases"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Death</span>
+                                        <h4 id="germany_deaths"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Recovered</span>
+                                        <h4 id="germany_total_recovered"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Today Death</span>
+                                        <h4 id="germany_new_deaths"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Today Cases</span>
+                                        <h4 id="germany_new_cases"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Critical</span>
+                                        <h4 id="germany_serious_critical"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Active Cases</span>
+                                        <h4 id="germany_active_cases"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center text-center">
+                    <div class="col">
+                        <div class="google-ads-leaderboard">
+                            <img src="images/ads/ads2.jpg" alt="" class="img-fluid">
+                            <p>Ads here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title"><span id="france_flag" class="mr-2"></span> France</h4>
+                            </div>
+                            <div class="card-body widget">
+                                <div class="row">
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Cases</span>
+                                        <h4 id="france_cases"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Death</span>
+                                        <h4 id="france_deaths"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Recovered</span>
+                                        <h4 id="france_total_recovered"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Today Death</span>
+                                        <h4 id="france_new_deaths"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Today Cases</span>
+                                        <h4 id="france_new_cases"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Critical</span>
+                                        <h4 id="france_serious_critical"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Active Cases</span>
+                                        <h4 id="france_active_cases"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title"><span id="china_flag" class="mr-2"></span> China</h4>
+                            </div>
+                            <div class="card-body widget">
+                                <div class="row">
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Cases</span>
+                                        <h4 id="china_cases"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Death</span>
+                                        <h4 id="china_deaths"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Recovered</span>
+                                        <h4 id="china_total_recovered"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Today Death</span>
+                                        <h4 id="china_new_deaths"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Today Cases</span>
+                                        <h4 id="china_new_cases"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Critical</span>
+                                        <h4 id="china_serious_critical"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Active Cases</span>
+                                        <h4 id="china_active_cases"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center text-center">
+                    <div class="col">
+                        <div class="google-ads-leaderboard">
+                            <img src="images/ads/ads3.jpg" alt="" class="img-fluid">
+                            <p>Ads here</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title"><span id="iran_flag" class="mr-2"></span> Iran</h4>
+                            </div>
+                            <div class="card-body widget">
+                                <div class="row">
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Cases</span>
+                                        <h4 id="iran_cases"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Death</span>
+                                        <h4 id="iran_deaths"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Recovered</span>
+                                        <h4 id="iran_total_recovered"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Today Death</span>
+                                        <h4 id="iran_new_deaths"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Today Cases</span>
+                                        <h4 id="iran_new_cases"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Critical</span>
+                                        <h4 id="iran_serious_critical"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Active Cases</span>
+                                        <h4 id="iran_active_cases"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title"><span id="uk_flag" class="mr-2"></span> UK</h4>
+                            </div>
+                            <div class="card-body widget">
+                                <div class="row">
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Cases</span>
+                                        <h4 id="uk_cases"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Death</span>
+                                        <h4 id="uk_deaths"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Recovered</span>
+                                        <h4 id="uk_total_recovered"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Today Death</span>
+                                        <h4 id="uk_new_deaths"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Today Cases</span>
+                                        <h4 id="uk_new_cases"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Critical</span>
+                                        <h4 id="uk_serious_critical"></h4>
+                                    </div>
+                                    <div class="col-xl-3 mb-3">
+                                        <span>Active Cases</span>
+                                        <h4 id="uk_active_cases"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-md-6">
+                        <div class="copy_right">
+                            Copyright © 2020 Quixlab. All Rights Reserved.
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-6 text-lg-right text-center">
+                        <div class="social">
+                            <a href="https://www.youtube.com/channel/UChN1goECpg64jlUxSzySiNg?view_as=subscriber"><i
+                                    class="fab fa-youtube"></i></a>
+                            <a href="https://twitter.com/quixlab"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/qxlab"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--removeIf(production)-->
+        <!--**********************************
+            Right sidebar start
+        ***********************************-->
+        <div class="sidebar-right">
+            <a class="sidebar-right-trigger" href="javascript:void(0)">
+                <span><i class="fa fa-cog fa-spin"></i></span>
+            </a>
+            <div class="sidebar-right-inner">
+                <div class="admin-settings">
+                    <div class="opt-header-color">
+                        <p>Background Color</p>
+                        <div>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_1" class="filled-in chk-col-primary"
+                                    id="header_color_1">
+                                <label for="header_color_1"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_2" class="filled-in chk-col-primary"
+                                    id="header_color_2">
+                                <label for="header_color_2"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_3" class="filled-in chk-col-primary"
+                                    id="header_color_3">
+                                <label for="header_color_3"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_4" class="filled-in chk-col-primary"
+                                    id="header_color_4">
+                                <label for="header_color_4"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_5" class="filled-in chk-col-primary"
+                                    id="header_color_5">
+                                <label for="header_color_5"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_6" class="filled-in chk-col-primary"
+                                    id="header_color_6">
+                                <label for="header_color_6"></label>
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Direction</p>
+                        <select class="form-control" name="theme_direction" id="theme_direction">
+                            <option value="ltr">LTR</option>
+                            <option value="rtl">RTL</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Right sidebar end
+        ***********************************-->
+        <!--endRemoveIf(production)-->
+        
+    </div>
+
+
+
+
+
+
+    <script src="vendors/jquery/jquery.min.js"></script>
+    <script src="vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/widgets.js"></script>
+    <script src="js/scripts.js"></script>
+    
+    <script src="js/settings.js"></script>
+    <script src="js/quixnav-init.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+</body>
+
+
+<!-- Mirrored from quixlab.com/demo/covtrack/widgets.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 May 2020 01:28:05 GMT -->
+</html>

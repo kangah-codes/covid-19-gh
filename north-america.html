@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Covid-19-Track GH</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+
+        <div class="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="">
+                                <span>Covid-19-GH</span></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <span><i class="fas fa-tachometer-alt"></i></span>
+                                        <a class="nav-link" href="index.html"> Home </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <span><i class="fas fa-chart-area"></i></span>
+                                        <a class="nav-link" href="charts.html">Charts</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <span><i class="fas fa-globe-europe"></i></span>
+                                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                                            Continent
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="world.html">World</a>
+                                            <a class="dropdown-item" href="asia.html">Asia</a>
+                                            <a class="dropdown-item" href="europe.html">Europe</a>
+                                            <a class="dropdown-item" href="africa.html">Africa</a>
+                                            <a class="dropdown-item" href="australia.html">Australia</a>
+                                            <a class="dropdown-item" href="south-america.html">South America</a>
+                                            <a class="dropdown-item" href="north-america.html">North America</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">North America</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="continent-map" class="continent-map"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="country-datainfo">
+                                    <div id="country_flag"></div>
+                                    <h3 class="mb-0" id="country_name"></h3>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="country-data">
+                                    <div class="icon gradient-1">
+                                        <i class="fas fa-virus"></i>
+                                    </div>
+                                    <div>
+                                        <span>Total Cases</span>
+                                        <h3 id="country_cases"></h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-xl-6">
+                                <div class="country-data">
+                                    <div class="icon gradient-3">
+                                        <i class="fas fa-bell"></i>
+                                    </div>
+                                    <div>
+                                        <span>Today Cases</span>
+                                        <h3 id="country_todayCases"></h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-xl-6">
+                                <div class="country-data">
+                                    <div class="icon gradient-9">
+                                        <i class="fas fa-procedures"></i>
+                                    </div>
+                                    <div>
+                                        <span>Total Deaths</span>
+                                        <h3 id="country_deaths"></h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-xl-6">
+                                <div class="country-data">
+                                    <div class="icon gradient-12">
+                                        <i class="fas fa-bed"></i>
+                                    </div>
+                                    <div>
+                                        <span>Today Deaths</span>
+                                        <h3 id="country_todayDeaths"></h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-xl-6">
+                                <div class="country-data">
+                                    <div class="icon gradient-4">
+                                        <i class="fas fa-child"></i>
+                                    </div>
+                                    <div>
+                                        <span>Recovered</span>
+                                        <h3 id="country_recovered"></h3>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-xl-6">
+                                <div class="country-data">
+                                    <div class="icon gradient-8">
+                                        <i class="fas fa-head-side-cough"></i>
+                                    </div>
+                                    <div>
+                                        <span>Active</span>
+                                        <h3 id="country_active"></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="country-data">
+                                    <div class="icon gradient-14">
+                                        <i class="fas fa-lungs-virus"></i>
+                                    </div>
+                                    <div>
+                                        <span>Critical</span>
+                                        <h3 id="country_critical"></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="country-data">
+                                    <div class="icon gradient-15">
+                                        <i class="fas fa-vial"></i>
+                                    </div>
+                                    <div>
+                                        <span>Cases Per Million</span>
+                                        <h3 id="country_casesPerOneMillion"></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="country-data">
+                                    <div class="icon gradient-9">
+                                        <i class="fas fa-skull"></i>
+                                    </div>
+                                    <div>
+                                        <span>Deaths Per Million</span>
+                                        <h3 id="country_deathsPerOneMillion"></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="footer">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-md-6">
+                        <div class="copy_right">
+                            Copyright © 2020 Quixlab. All Rights Reserved.
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-6 text-lg-right text-center">
+                        <div class="social">
+                            <a href="https://www.youtube.com/channel/UChN1goECpg64jlUxSzySiNg?view_as=subscriber"><i
+                                    class="fab fa-youtube"></i></a>
+                            <a href="https://twitter.com/quixlab"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/qxlab"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+        <!--removeIf(production)-->
+        <!--**********************************
+            Right sidebar start
+        ***********************************-->
+        <div class="sidebar-right">
+            <a class="sidebar-right-trigger" href="javascript:void(0)">
+                <span><i class="fa fa-cog fa-spin"></i></span>
+            </a>
+            <div class="sidebar-right-inner">
+                <div class="admin-settings">
+                    <div class="opt-header-color">
+                        <p>Background Color</p>
+                        <div>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_1" class="filled-in chk-col-primary"
+                                    id="header_color_1">
+                                <label for="header_color_1"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_2" class="filled-in chk-col-primary"
+                                    id="header_color_2">
+                                <label for="header_color_2"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_3" class="filled-in chk-col-primary"
+                                    id="header_color_3">
+                                <label for="header_color_3"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_4" class="filled-in chk-col-primary"
+                                    id="header_color_4">
+                                <label for="header_color_4"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_5" class="filled-in chk-col-primary"
+                                    id="header_color_5">
+                                <label for="header_color_5"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_6" class="filled-in chk-col-primary"
+                                    id="header_color_6">
+                                <label for="header_color_6"></label>
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Direction</p>
+                        <select class="form-control" name="theme_direction" id="theme_direction">
+                            <option value="ltr">LTR</option>
+                            <option value="rtl">RTL</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Right sidebar end
+        ***********************************-->
+        <!--endRemoveIf(production)-->
+
+    </div>
+
+
+
+
+
+
+    <script src="vendors/jquery/jquery.min.js"></script>
+    <script src="vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="vendors/vectormap/jquery.vmap.min.js"></script>
+    <script src="vendors/vectormap/maps/continents/jquery.vmap.north-america.js"></script>
+
+    <script src="js/america/north-america.js"></script>
+    <script src="js/scripts.js"></script>
+    
+    <script src="js/settings.js"></script>
+    <script src="js/quixnav-init.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+</body>
+
+
+<!-- Mirrored from quixlab.com/demo/covtrack/north-america.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 May 2020 01:28:19 GMT -->
+</html>
